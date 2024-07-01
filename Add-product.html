@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TechSStore</title>
+    <style>
+        /* Product Add page */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: radial-gradient(#fff,#4ae2ed);
+}
+
+.container form{
+  padding:20px;
+  width:1000px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#2e2e2e;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #1f3e73;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #1d0948;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+label{
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    text-transform:capitalize;
+    background-color: #1f3e73;
+    padding: 10px 50px;
+    border-radius: 2px;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+label:hover{
+    background: #1d0948;
+  }
+
+    </style>
+    <script>
+        function validateForm() {
+            const subPhotos = document.getElementById('sub_photos');
+            const files = subPhotos.files;
+
+            if (files.length > 3) {
+                alert("You can only upload a maximum of 3 sub-images.");
+                return false;  // Prevent form submission
+            }
+
+            return true;  // Allow form submission
+        }
+    </script>
+</head>
+<body>
+        <div class="container">
+            <form action="">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="title">Product Details</h3>
+
+                        <div class="inputBox">
+                            <span>Product name :</span>
+                            <input type="text" placeholder="Product Name">
+                        </div>
+                    
+                        <div class="inputBox">
+                            <span>Product Description :</span>
+                            <input type="text" placeholder="Write Desscription hear...">
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Category :</span>
+                            <input type="text" placeholder="Category">
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Rating: :</span>
+                            <input type="text" placeholder="Rating">
+                        </div>
+        
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>Price :</span>
+                                <input type="number" placeholder="0000">
+                            </div>
+                        <div class="flex">
+                            <div class="btn">
+                                <input type="file" id="main_photo">
+                                <label for="main_photo" ><i class="fa-solid fa-upload"></i> &nbsp; main-img</label>
+                            </div>
+                        <!-- <div class="flex">
+                            <div class="btn">
+                                <input type="file" id="sub-photo">
+                                <label for="main_photo"><i class="fa-solid fa-upload"></i> &nbsp; sub-img</label>
+                            </div>
+                        </div> -->
+                    </div>
+        
+                    <div class="col">
+                        <!-- <h3 class="title">payment</h3> -->
+        
+                        <!-- <div class="inputBox">
+                            <span>cards accepted :</span>
+                            <img src="images/card_img.png" alt="">
+                        </div>
+                        <div class="inputBox">
+                            <span>name on card :</span>
+                            <input type="text" placeholder="mr. john deo">
+                        </div>
+                        <div class="inputBox">
+                            <span>credit card number :</span>
+                            <input type="number" placeholder="1111-2222-3333-4444">
+                        </div> -->
+                        <!-- <div class="inputBox">
+                            <span>exp month :</span>
+                            <input type="text" placeholder="january">
+                        </div> -->
+        
+                        <!-- <div class="flex">
+                            <div class="inputBox">
+                                <span>Price :</span>
+                                <input type="number" placeholder="2022">
+                            </div> -->
+                            <!-- <div class="inputBox">
+                                <span>CVV :</span>
+                                <input type="text" placeholder="1234">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="+ Add Product" class="submit-btn">
+            </form>
+        </div>    
+</body>
+</html>
